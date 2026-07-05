@@ -43,3 +43,18 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('sticky');
     }
 });
+// Tìm nút Dark Mode bằng ID
+const darkModeBtn = document.getElementById('dark-mode-btn');
+
+// Lắng nghe sự kiện khi người dùng click vào nút
+darkModeBtn.addEventListener('click', function() {
+    // Thêm hoặc xóa class "dark-theme" khỏi thẻ body mỗi khi bấm
+    document.body.classList.toggle('dark-theme');
+    
+    // Đổi chữ trên nút bấm tương ứng với trạng thái
+    if (document.body.classList.contains('dark-theme')) {
+        darkModeBtn.innerHTML = "Chế độ ban ngày ☀️";
+    } else {
+        darkModeBtn.innerHTML = "Chế độ ban đêm 🌙";
+    }
+});
