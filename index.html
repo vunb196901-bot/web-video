@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Video của tôi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin-top: 30px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        video {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .playlist {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+.playlist-btn {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease; /* Hiệu ứng mượt mà trong 0.3 giây */
+        }
+        .playlist-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.08);    /* Phóng to nhẹ nút lên 1.08 lần */
+            /* 1. Thiết kế nút Ẩn/Hiện mặc định */
+        #toggle-btn {
+            background-color: #ffffff;    /* Nền trắng tinh khôi */
+            color: #ff5722;               /* Chữ màu cam nổi bật */
+            border: 2px solid #ff5722;    /* Viền màu cam */
+            padding: 8px 16px;            /* Khoảng cách đệm trong nút */
+            border-radius: 20px;          /* Bo tròn hai đầu nhìn rất hiện đại */
+            font-weight: bold;            /* Chữ đậm rõ ràng */
+            margin: 15px 0;               /* Tạo khoảng cách trên dưới với video và danh sách */
+            cursor: pointer;              /* Biến con trỏ chuột thành hình bàn tay */
+            transition: all 0.3s ease;    /* Hiệu ứng chuyển động mượt mà */
+        }
+
+        /* 2. Hiệu ứng khi di chuột (Hover) qua nút */
+        #toggle-btn:hover {
+            background-color: #ff5722;    /* Đổi sang nền cam */
+            color: #ffffff;               /* Chữ đổi sang màu trắng ngược lại */
+            transform: translateY(-2px);  /* Nút nhấc nhẹ lên 2px tạo cảm giác sống động */
+        }
+        }        header {
+    background-color: #fafafa;
+    padding: 10px 0;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header id="navbar">
+    <h1>Trang web video của tôi</h1>
+    <p>Chọn một video bên dưới để phát:</p>
+</header>
+
+        <video id="main-video" src="myvideo.mp4" controls width="640">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+<button id="toggle-btn">Ẩn / Hiện Danh Sách</button>
+       <div class="playlist" id="playlist-container">
+            <button class="playlist-btn" onclick="playVideo('myvideo.mp4', this)">Video 1 (Milo)</button>
+            <button class="playlist-btn" onclick="playVideo('https://www.w3schools.com/html/mov_bbb.mp4', this)">Video 2 (Thỏ Bunny)</button>
+            <button class="playlist-btn" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', this)">Video 3 (Gấu Bear)</button>
+            <button class="playlist-btn" onclick="playVideo('https://vjs.zencdn.net/v/oceans.mp4', this)">Video 4 (Đại dương)</button>
+            <button class="playlist-btn" onclick="playVideo('https://media.w3.org/2010/05/sintel/trailer_hd.mp4', this)">Video 5 (Hoạt hình Sintel)</button>
+            <!-- 5 Video bổ sung mới -->
+        <button class="playlist-btn" onclick="playVideo('https://www.w3schools.com/tags/movie.mp4', this)">Video 6 (Gấu con vui nhộn)</button>
+        <button class="playlist-btn" onclick="playVideo('https://vjs.zencdn.net/v/disney.mp4', this)">Video 7 (Thế giới Disney)</button>
+        <button class="playlist-btn" onclick="playVideo('https://media.w3s.org/2010/05/bunny/movie.mp4', this)">Video 8 (Hoạt hình Thỏ lớn)</button>
+        <button class="playlist-btn" onclick="playVideo('https://www.w3schools.com/html/mov_bbb.mp4', this)">Video 9 (Thiên nhiên hoang dã)</button>
+        <button class="playlist-btn" onclick="playVideo('https://vjs.zencdn.net/v/oceans.mp4', this)">Video 10 (Khám phá Biển sâu)</button>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</html>
